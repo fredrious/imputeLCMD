@@ -8,7 +8,7 @@
 # output ______________________________________________________________________________
 #           : dataSet.imputed      - dataset containing complete abundances
 require(missForest)
-impute.wrapper.missForest = function(dataSet.mvs, ...){
+impute.wrapper.RF = function(dataSet.mvs, ...){
   
   resultmissForest = missForest(mwk, verbose = TRUE, ...)
   dataSet.imputed = resultmissForest$ximp
