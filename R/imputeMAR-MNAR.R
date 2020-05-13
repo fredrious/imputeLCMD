@@ -7,7 +7,7 @@
 #                         (either peptides or proteins)
 #   : model.selector    - binary vector; "1" indicates MCAR proteins
 #   : method.MAR        - the method to be used for MAR missing values
-#                       - possible values: MLE (default), SVD, KNN
+#                       - possible values: MLE (default), SVD, KNN, RF
 #   : method.MNAR       - the method to be used for MAR missing values
 #                       - possible values: QRILC (default), MinDet, MinProb
 
@@ -38,7 +38,13 @@ impute.MAR.MNAR = function(dataSet.mvs, model.selector,
              dataSet.MCAR.imputed = impute.MAR(dataSet.mvs, 
                                                 model.selector,
                                                 method = "KNN") 
-           }     
+           },
+           
+           RF = {
+             dataSet.MCAR.imputed = impute.MAR(dataSet.mvs, 
+                                                model.selector,
+                                                method = "RF") 
+           }  
     )
   
   # ___________________________________________________________________________________
